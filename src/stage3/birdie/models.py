@@ -14,11 +14,11 @@ from zope.sqlalchemy import ZopeTransactionExtension
 from pyramid.security import Authenticated
 from pyramid.security import Allow
 
-from cryptacular.bcrypt import BCRYPTPasswordManager
+from cryptacular.pbkdf2 import PBKDF2PasswordManager
 
 DBSession = scoped_session(sessionmaker(extension=ZopeTransactionExtension()))
 Base = declarative_base()
-crypt = BCRYPTPasswordManager()
+crypt = PBKDF2PasswordManager()
 
 class User(Base):
     __tablename__ = 'users'
