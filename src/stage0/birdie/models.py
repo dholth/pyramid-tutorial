@@ -1,6 +1,9 @@
 from sqlalchemy import Column
 from sqlalchemy import Integer
 from sqlalchemy import Unicode
+from sqlalchemy.exc import IntegrityError
+
+import transaction
 
 from sqlalchemy.ext.declarative import declarative_base
 
